@@ -96,7 +96,9 @@ hospital-patient-analytics/
 ## Power BI Dashboard
 
 ### Dashboard Overview
-![Dashboard Overview](images/dashboard_overview.jpg)
+<p align="center">
+  <img src="images/dashboard_overview.jpg" width="850">
+</p>
 
 The dashboard provides a high-level view of hospital operations, including:
 - Total admissions
@@ -108,7 +110,9 @@ The dashboard provides a high-level view of hospital operations, including:
 ---
 
 ### Department-Level Insight (Example: ICU)
-![ICU Department Insight](images/icu_department_insight.png)
+<p align="center">
+  <img src="images/icu_department_insight.png" width="500">
+</p>
 
 Hover-based tooltip analysis highlights:
 - ICU has the **longest average length of stay (8.64 days)**

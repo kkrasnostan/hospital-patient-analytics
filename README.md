@@ -111,8 +111,9 @@ The dashboard provides a high-level view of hospital operations, including:
 
 ### Department-Level Insight (Example: ICU)
 <p align="center">
-  <img src="images/icu_department_insight.png" width="500">
+  <img src="images/icu_department-insight.png" width="500">
 </p>
+
 
 Hover-based tooltip analysis highlights:
 - ICU has the **longest average length of stay (8.64 days)**

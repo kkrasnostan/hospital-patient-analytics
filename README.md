@@ -48,6 +48,8 @@ Synthetic hospital patient data designed to reflect realistic healthcare operati
 ---
 
 ## Project Structure
+
+```text
 hospital-patient-analytics/
 │
 ├── data/
@@ -80,6 +82,7 @@ hospital-patient-analytics/
 │
 ├── hospital_analysis.ipynb
 └── README.md
+```
 
 ---
 

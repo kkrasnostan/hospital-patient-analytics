@@ -1,84 +1,159 @@
-# Hospital Patient Flow & Operations Analytics
-
-## Overview
-This project analyzes hospital patient flow and operational performance using synthetically generated healthcare data.  
-It demonstrates an end-to-end analytics workflow combining **Python, SQL, and Power BI** to generate actionable operational insights at both hospital and department levels.
-
-All data used in this project is synthetic and does not represent real patients.
+# Hospital Patient Flow & Operational Performance Analytics  
+End-to-End Healthcare Operations Intelligence Framework
 
 ---
 
-## Project Objectives
-- Analyze hospital admissions and patient flow
-- Measure operational efficiency using key KPIs
-- Compare department-level performance
-- Identify capacity and readmission risk patterns
-- Demonstrate a complete analytics pipeline from raw data to dashboard
+## Executive Overview
+
+This project models hospital patient flow and operational performance using **synthetic healthcare data** to replicate real-world operational analytics environments.
+
+It demonstrates a structured pipeline combining:
+
+- Python (data engineering & preprocessing)
+- SQL (KPI layer & aggregation logic)
+- Power BI (executive dashboard layer)
+
+The objective is not predictive modeling —  
+but operational visibility, KPI architecture, and department-level performance monitoring.
+
+All data is synthetic and safe for public use.
 
 ---
 
-## Tools & Technologies
-- **Python** (pandas, matplotlib)
-- **SQL** (SQLite)
-- **Jupyter Notebook**
-- **DBeaver**
-- **Power BI Desktop**
+## Business Context
 
----
+Hospital operations require continuous monitoring of:
 
-## Dataset
-Synthetic hospital patient data designed to reflect realistic healthcare operations, including:
-- Patient demographics (age, gender, nationality)
-- Insurance type (national / private)
-- Admission type (planned vs emergency)
-- Hospital department and diagnosis
-- Admission and discharge dates
+- Admission volume and distribution
 - Length of stay (LOS)
-- 30-day readmission indicator
+- Readmission risk
+- Department capacity pressure
+- Monthly demand stability
+
+This framework translates raw patient-level records into executive-ready operational intelligence.
 
 ---
 
-## Key KPIs
-- Total admissions
-- Admissions by department
-- Average length of stay (LOS)
-- Monthly admissions trend
-- Department-level readmission rates
+# Key Operational KPIs
+
+- Total Admissions
+- Admissions by Department
+- Average Length of Stay (LOS)
+- Monthly Admissions Trend
+- 30-Day Readmission Rate
+- Department-Level Performance Comparison
 
 ---
 
-## Project Structure
+# Core Analytical Outputs
 
-```text
+## 1️⃣ Admissions by Department
+
+![Admissions by Department](images/admissions_by_department.png)
+
+Emergency accounts for the highest volume, reflecting consistent frontline demand.  
+ICU shows lower volume but higher resource intensity.
+
+---
+
+## 2️⃣ Average Length of Stay (LOS)
+
+![Average LOS by Department](images/avg_los_by_department.png)
+
+ICU demonstrates the longest LOS (8.64 days), indicating higher case complexity.  
+Emergency shows the shortest LOS, consistent with triage-driven flow.
+
+---
+
+## 3️⃣ Monthly Admissions Trend
+
+![Monthly Admissions Trend](images/monthly_admissions_trend.png)
+
+Admissions remain relatively stable throughout the year, with moderate mid-year peaks.  
+This supports predictable capacity planning assumptions.
+
+---
+
+## 4️⃣ Executive Dashboard Layer (Power BI)
+
+![Dashboard Overview](images/dashboard_overview.jpg)
+
+The dashboard consolidates:
+
+- 10,000 total admissions
+- 4.76 average LOS
+- 15.74% average readmission rate
+- Department comparisons
+- Interactive filtering
+
+Designed for executive-level operational monitoring.
+
+---
+
+## 5️⃣ Department-Level Insight (ICU Example)
+
+![ICU Department Insight](images/icu_department_insight.png)
+
+ICU shows:
+
+- Highest average LOS (8.64 days)
+- Highest readmission rate (22.58%)
+
+This combination suggests elevated patient complexity and post-discharge risk,  
+highlighting opportunities for discharge planning optimization.
+
+---
+
+# Analytical Architecture
+
+Synthetic Raw Data  
+↓  
+Python (Cleaning & Feature Engineering)  
+↓  
+SQLite Database  
+↓  
+SQL KPI Layer  
+↓  
+Aggregated CSV Outputs  
+↓  
+Power BI Dashboard  
+
+Separation of layers ensures transparency, auditability, and reproducibility.
+
+---
+
+# Project Structure
+
+```
 hospital-patient-analytics/
 │
 ├── data/
-│ ├── hospital.db
-│ ├── hospital_patients_raw.csv
-│ ├── hospital_patients_dirty.csv
-│ ├── hospital_patients_clean.csv
+│   ├── hospital.db
+│   ├── hospital_patients_raw.csv
+│   ├── hospital_patients_dirty.csv
+│   └── hospital_patients_clean.csv
 │
 ├── sql/
-│ ├── 01_schema.sql
-│ ├── 02_kpis.sql
-│ ├── 03_trends.sql
-│ └── 04_readmissions.sql
+│   ├── 01_schema.sql
+│   ├── 02_kpis.sql
+│   ├── 03_trends.sql
+│   └── 04_readmissions.sql
 │
 ├── outputs/
-│ ├── kpis_summary.csv
-│ ├── department_performance.csv
-│ ├── monthly_admissions.csv
-│ └── readmissions_by_department.csv
+│   ├── kpis_summary.csv
+│   ├── department_performance.csv
+│   ├── monthly_admissions.csv
+│   └── readmissions_by_department.csv
 │
 ├── images/
-│ ├── dashboard_overview.jpg
-│ ├── icu_department_insight.png
-│ ├── admissions_by_department.png
-│ ├── avg_los_by_department.png
-│ └── monthly_admissions_trend.png
+│   ├── dashboard_overview.jpg
+│   ├── icu_department_insight.png
+│   ├── admissions_by_department.png
+│   ├── avg_los_by_department.png
+│   └── monthly_admissions_trend.png
 │
 ├── powerbi/
-│ └── Hospital_Admissions_Dashboard.pbix
+│   └── Hospital_Admissions_Dashboard.pbix
 │
 ├── hospital_analysis.ipynb
 └── README.md
@@ -86,60 +161,42 @@ hospital-patient-analytics/
 
 ---
 
-## Analysis Workflow
-1. Generate and clean synthetic hospital patient data using Python
-2. Store cleaned data in a SQLite database
-3. Define schema and perform analytical queries using SQL
-4. Export aggregated KPI tables for reporting
-5. Build an interactive Power BI dashboard
-6. Analyze department-level performance and trends
+# Strategic Observations
+
+- Emergency drives volume; ICU drives complexity.
+- Longer LOS correlates with higher readmission rates.
+- Monthly demand remains stable — suitable for structured capacity modeling.
+- Department-level KPI segmentation enables targeted operational intervention.
 
 ---
 
-## Power BI Dashboard
+# Technical Stack
 
-### Dashboard Overview
-<p align="center">
-  <img src="images/dashboard_overview.jpg" width="850">
-</p>
-
-The dashboard provides a high-level view of hospital operations, including:
-- Total admissions
-- Average length of stay
-- Average readmission rate
-- Department-level comparisons
-- Monthly admissions trend
+- Python (pandas, matplotlib)
+- SQLite
+- SQL
+- Power BI
+- Jupyter Notebook
 
 ---
 
-### Department-Level Insight (Example: ICU)
-<p align="center">
-  <img src="images/icu_department-insight.png" width="500">
-</p>
+# Positioning Value
 
+This project demonstrates:
 
-Hover-based tooltip analysis highlights:
-- ICU has the **longest average length of stay (8.64 days)**
-- ICU also shows the **highest readmission rate (22.58%)**
-- Indicates higher patient complexity and post-discharge risk
+- Operational KPI architecture
+- Healthcare domain analytics
+- Structured SQL business layer design
+- BI dashboard integration
+- End-to-end analytics pipeline ownership
 
----
-
-## Key Insights
-- Emergency departments handle the highest patient volumes, reflecting frontline demand
-- ICU patients have longer stays and higher readmission risk
-- Admissions remain relatively stable throughout the year
-- Departments with longer LOS tend to show higher readmission rates
-- Operational data can support capacity planning and discharge optimization
+It reflects practical healthcare operations intelligence — not isolated visualizations.
 
 ---
 
-## Notes
-- This project focuses on **analytics methodology**, not predictive modeling
-- Power BI file is included for full interactivity
-- All data is synthetic and safe for public sharing
+## Author
 
----
+Konstantinos Krasnostan  
+Data Analyst | Operational Intelligence & Business Analytics  
 
-## Contact
 LinkedIn: https://www.linkedin.com/in/kon-kras/

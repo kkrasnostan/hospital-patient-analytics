@@ -92,7 +92,7 @@ Designed for executive-level operational monitoring.
 
 ## 5️⃣ Department-Level Insight (ICU Example)
 
-![ICU Department Insight](images/icu_department_insight.png)
+![ICU Department Insight](images/icu_department-insight.png)
 
 ICU shows:
 
